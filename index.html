@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="黑白棋介紹、基礎知識、策略及教學資源">
+    <meta name="keywords" content="黑白棋,翻轉棋,奧賽羅棋,棋類遊戲,策略遊戲">
+    <title>黑白棋介紹</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        nav {
+            background: linear-gradient(to bottom, #404040, #333);
+            padding: 12px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            overflow-x: auto;   
+            white-space: nowrap;  
+            -webkit-overflow-scrolling: touch;  
+            scrollbar-width: none;  
+        }   
+        nav::-webkit-scrollbar {
+            display: none;  
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px; 
+            font-size: 0.95em;
+            padding: 6px 10px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        main {
+            margin-top: 60px;
+            margin: 60px auto 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #444;
+            font-size: 2.4em;
+            text-align: center;
+            margin: 10px 0 20px 0;
+            letter-spacing: 0.5px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ddddddbd;  
+            padding-bottom: none;
+            letter-spacing: 0.5px;
+        }
+        p {
+            margin-bottom: 1.5em;
+            text-align: justify;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .image-section {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            gap: 20px;
+        }
+        #knowledge .image-section:nth-child(2) {
+            border-top: none;
+        }
+        .image-section p {
+            margin: 0;
+            flex: 1;
+        }
+        .image-section img {
+            width: 225px;
+            height: 225px;
+            object-fit: contain;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .rules-list, .strategies-list {
+            padding-left: 20px;
+        }
+        section {
+            padding: 15px 0;
+            scroll-margin-top: 60px;
+        }
+        .resources-list {
+            columns: 2;
+            column-gap: 20px;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+        .resources-list li {
+            padding-left: 0;
+            margin-bottom: 10px;
+            break-inside: avoid;
+        }
+        .resources-list ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: #0073e6;
+            text-decoration: underline;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .strategy-section {
+            margin: 2em 0;
+        }
+        .strategy-content {
+            display: flex;
+            gap: 1em;
+            align-items: flex-start;
+        }
+        .image-slider {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .image-slider img {
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+        .slider-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            width: 400px;
+        }
+        .slider-buttons button {
+            width: 180px;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .slider-buttons button:hover {
+            background-color: #45a049;
+        }
+        .slider-buttons button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .slider-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .step-description {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+        }
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding: 8px 12px;
+            }
+            nav a {
+                font-size: 0.9em;
+                padding: 5px 8px;
+                margin: 0 4px;
+                white-space: nowrap;
+            }
+            main {
+                margin-top: 45px;
+            }
+            .image-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-section img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            .resources-list {
+                columns: 1;
+            }
+            .image-slider img {
+                width: 300px;
+                height: 300px;
+                margin-right: 0;
+            }
+            .slider-buttons {
+                width: 300px;
+            }
+            .slider-content {
+                flex-direction: column;
+            }
+            .step-description {
+                width: 100%;
+                text-align: left;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav aria-label="主导航">
+    <a href="#about" aria-current="page">關於黑白棋</a>
+    <a href="#knowledge">黑白棋基礎知識</a>
+    <a href="#letting-corner">讓角</a>
+    <a href="#resources">其他黑白棋教學資訊</a>
+</nav>
+
+<main>
+    <header>
+        <h1>黑白棋介紹</h1>
+    </header>
+
+    <section id="about">
+        <h2>關於黑白棋</h2>
+        <p>黑白棋，又稱為翻轉棋、蘋果棋或奧賽羅棋，是一種雙人棋盤遊戲。遊戲棋盤為 8x8 的正方形，每位玩家分別代黑或白，目標是將對手的棋子翻轉成自己的顏色，並在棋盤上佔據更多的位置。</p>
+        <p>黑白棋在台灣屬於相對冷門的棋類。今年 6 月 1 日舉行的台灣黑白棋公開賽吸引了創紀錄的 34 位參賽者，是歷年來人數最多的一次。台灣黑白棋公開賽的優勝者將獲得參加黑白棋世界賽的資格。今年的黑白棋世界賽於 10 月 24 日至 10 月 27 日舉行，台灣代表隊在此次比賽中取得了第 7 名的成績。</p>
+    </section>
+
+    <section id="knowledge">
+        <h2>黑白棋基礎知識</h2>
+        <div class="image-section">
+            <img src="C:\Users\72868\Downloads\Othello\基礎\1.png" alt="黑白棋標準標記法 - 圖1">
+            <p><strong>黑白棋的標準標記法</strong>...</p>
+        </div>
+        <div class="image-section">
+            <img src="C:\Users\72868\Downloads\Othello\基礎\2.png" alt="黑白棋特定標記 - 圖2">
+            <p><strong>特定位置標記法</strong>...</p>
+        </div>
+
+
+        <h3>棋規</h3>
+        <ul class="rules-list">
+            <li>黑方先行，雙方交替下棋。</li>
+            <li>每步需下棋並翻轉對手的棋子。</li>
+            <li>新棋子與已有棋子間夾住的對手棋子會翻轉。</li>
+            <li>夾住對手的棋子可在多個方向上同時翻轉。</li>
+            <li>無法至少翻轉一顆對手棋子時，回合換對手手下。</li>
+            <li>當棋盤填滿或雙方無法下棋時，遊戲結束。</li>
+        </ul>
+
+        <h3>黑白棋基礎策略</h3>
+        <ul class="strategies-list">
+            <li><strong>開頭要吃少：</strong>很多新手會覺得吃越多越好，但其實不是太多會導致你的選擇變少，選擇太少就會容易下到差步，開頭吃少外也要注意不要被吃光了。</li>
+            <li><strong>吃被包住的棋：</strong>吃被包住的棋比較不會增加對手的選擇，吃少和吃包住的棋目的都是減少對方的選擇，通常看起來比較被包住的一方、選擇比較多的一方都是優勢。比較詳細的可以參考 <a href="http://blog.chinaunix.net/uid/20375883/sid-161508-abstract-1.html" target="_blank">散度理論講義-黃志華</a></li>
+            <li><strong>避開危險的位子：</strong>新手盡量不要下C點和X點留到尾盤在下，在大多情況下X點會被；搶到角落，有些情況下C點會被搶到角落。</li>
+            <li><strong>角落很重要：</strong>角落很重要，佔到角落後可以盡量往外延伸，別人佔到角的話盡量不要讓他往外延伸。</li>
+        </ul>
+    </section>
+
+<div class="strategy-section" ><section id="letting-corner">
+    <h2>讓角</h2>
+    <p>讓角是黑白棋中很常見的策略,是一種透過誘惑、逼迫別人下角落來使自己取得其他優勢的策略。以下是一種常見的讓角情況:</p>
+    
+    <h3><strong>不平衡邊：</strong></h3>
+    <p>不平衡邊指對手在一個邊中沒有佔角連續佔了5個子無法佔到第6個子,形成一種不平衡的形狀,這時候就可以下不平衡那裡的X點,對手佔角後就可以插入他還沒下的那第6個子,之後就可以拿下邊和角。</p>
+
+<div class="image-section">
+    <div class="image-slider">
+        <strong>成功案例</strong>
+        <div class="slider-container">
+            <div class="slider-content">
+                <img src="C:\Users\72868\Downloads\Othello\讓角\1\1\1-1-1.jpg" 
+                     id="corner-img-0"      
+                     alt="成功案例"     
+                     aria-live="polite"
+                     loading="lazy">            
+                <div class="step-description">
+                    <p id="step-text-0">圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。</p>
+                </div>
+            </div>
+            <div class="slider-buttons">
+                <button onclick="prevImage(0)" id="prev-btn-0">上一步</button>
+                <button onclick="nextImage(0)" id="next-btn-0">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 其他兩個案例保持不變，只需移除多餘的嵌套結構 -->
+<div class="image-section">
+    <div class="image-slider">
+        <strong>失敗案例1</strong>
+        <div class="slider-container">
+            <div class="slider-content">
+                <img src="C:\Users\72868\Downloads\Othello\讓角\1\2\1-2-1.jpg" 
+                     id="corner-img-1" 
+                     alt="失敗案例1">
+                <div class="step-description">
+                    <p id="step-text-1">圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。</p>
+                </div>
+            </div>
+            <div class="slider-buttons">
+                <button onclick="prevImage(1)" id="prev-btn-1">上一步</button>
+                <button onclick="nextImage(1)" id="next-btn-1">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="image-section">
+    <div class="image-slider">
+        <strong>失敗案例2</strong>
+        <div class="slider-container">
+            <div class="slider-content">
+                    <img src="C:\Users\72868\Downloads\Othello\讓角\1\3\1-3-1.jpg" 
+                     id="corner-img-2" 
+                     alt="失敗案例2">
+                <div class="step-description">
+                    <p id="step-text-2">圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。</p>
+                </div>
+            </div>
+            <div class="slider-buttons">
+                <button onclick="prevImage(2)" id="prev-btn-2">上一步</button>
+                <button onclick="nextImage(2)" id="next-btn-2">下一步</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <p>總結：不平衡邊讓角失敗通常有以下原因：</p>
+    <ul class="summary-list">
+        <li>讓對手在不翻到X點的情況下插入C點，把不平衡邊變成平衡邊。</li>
+        <li>自己在對手佔角後無法插入角落旁邊的C點。</li>
+    </ul>
+    <p>以上棋型是簡單介紹讓角策略，下的步不一定是最佳步。</p>
+</div>
+
+<script>
+const allSliders = [
+    {
+        images: [
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/1/1-1-1.jpg",
+                text: "圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/1/1-1-2.jpg",
+                text: "圖2：這時可以下G2誘惑對方佔角。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/1/1-1-3.jpg",
+                text: "圖3：黑子下H1佔角後，就可以趁機插入H2。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/1/1-1-4.jpg",
+                text: "圖4：下H2後就可以拿下邊和角了。"
+            }
+        ],
+        currentIndex: 0
+    },
+    {
+        images: [
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/2/1-2-1.jpg",
+                text: "圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/2/1-2-2.jpg",
+                text: "圖2：這時候下G2的讓角會失敗，因為D2到G2都是白子，黑子下H2不會翻到G2導致被佔角。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/2/1-2-3.jpg",
+                text: "圖3：下了H2後原本的不平衡變就成了平衡邊。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/2/1-2-4.jpg",
+                text: "圖4：這時白子也無法阻止黑子佔角了，下了F8。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/2/1-2-5.jpg",
+                text: "圖5：黑子佔角後，就穩固了H1到h7的邊，角也可以往上面的邊繼續發展"
+            }
+        ],
+        currentIndex: 0
+    },
+    {
+        images: [
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/3/1-3-1.jpg",
+                text: "圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/3/1-3-2.jpg",
+                text: "圖2：但這時候下G2的讓角也會失敗。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/3/1-3-3.jpg",
+                text: "圖3：因為C2到F2都是黑子，黑子下H1的話白子不能插入H2。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/3/1-3-4.jpg",
+                text: "圖4：這時白子也無法阻止黑子了，下了D7。"
+            },
+            {
+                url: "C:/Users/72868/Downloads/Othello/讓角/1/3/1-3-5.jpg",
+                text: "圖5：黑子佔角後，就穩固了H1到h7的邊，角也可以往上面的邊繼續發展"
+            }
+        ],
+        currentIndex: 0
+    }
+];
+
+function prevImage(sliderId) {
+    if (allSliders[sliderId].currentIndex > 0) {
+        allSliders[sliderId].currentIndex--;
+        updateSlider(sliderId);
+    }
+}
+
+function nextImage(sliderId) {
+    if (allSliders[sliderId].currentIndex < allSliders[sliderId].images.length - 1) {
+        allSliders[sliderId].currentIndex++;
+        updateSlider(sliderId);
+    }
+}
+
+function preloadImages(sliderId) {
+    const slider = allSliders[sliderId];
+    slider.images.forEach(image => {
+        const img = new Image();
+        img.src = image.url;
+    });
+}
+
+function updateSlider(sliderId) {
+    const slider = allSliders[sliderId];
+    const img = document.getElementById(`corner-img-${sliderId}`);
+    const text = document.getElementById(`step-text-${sliderId}`);
+    const prevBtn = document.getElementById(`prev-btn-${sliderId}`);
+    const nextBtn = document.getElementById(`next-btn-${sliderId}`);
+    
+    if (!img || !text || !prevBtn || !nextBtn) return;
+    
+    img.style.opacity = '0.5';
+    img.style.transition = 'opacity 0.3s';
+    
+    const newImage = new Image();
+    newImage.onload = function() {
+        img.src = this.src;
+        img.style.opacity = '1';
+    };
+    newImage.src = slider.images[slider.currentIndex].url;
+    
+    text.textContent = slider.images[slider.currentIndex].text;
+    
+    prevBtn.disabled = slider.currentIndex === 0;
+    nextBtn.disabled = slider.currentIndex === slider.images.length - 1;
+    
+    document.onkeydown = function(e) {
+        if (e.key === 'ArrowLeft') prevImage(sliderId);
+        if (e.key === 'ArrowRight') nextImage(sliderId);
+    };
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    allSliders.forEach((slider, index) => {
+        slider.images.forEach(image => {
+            const img = new Image();
+            img.src = image.url;
+        });
+        updateSlider(index);
+    });
+});
+</script>
+        
+        
+<section id="resources">
+<h2>其他黑白棋教學資訊</h2></section>
+        <ul class="resources-list">
+            <li>書籍：
+                <ul> <div class="dropdown">
+                    <li><span>王偉-黑白新視角</span>
+                    <div class="dropdown-content">
+                        <a href="https://drive.google.com/file/d/1VrfNNnyn8cbXWjdysLPS6DDyZwZUa1Uv/view?usp=sharing" target="_blank">封面前言目錄</a>
+                        <a href="https://drive.google.com/file/d/19DkalQqU3Qow8SgUnO72tN12JT9ohxiI/view?usp=sharing" target="_blank">正文</a>
+                    </div>
+                </div>
+               
+                    <li><a href="https://drive.google.com/file/d/1hLEp70NXv9Bxtz6oxr-i_dFDo8samPTh/view?usp=sharing" target="_blank">Brian Rose-黑白棋指南</a></li>
+                </ul>
+            </li>
+           <li>文章：
+    <ul>  
+      <div class="dropdown">
+        <li>  
+            <span>黑白棋基礎教學</span>
+            <div class="dropdown-content">
+                <a href="https://www.ptt.cc/bbs/othello/M.1298698178.A.760.html" target="_blank">001</a>
+                <a href="https://www.ptt.cc/bbs/othello/M.1299304992.A.54A.html" target="_blank">002</a>
+                <a href="https://www.ptt.cc/bbs/othello/M.1300646760.A.440.html" target="_blank">003</a>
+            </div>
+        </li>
+        </div>
+        <li><a href="https://tetratioanime.medium.com/黑白棋筆記-x位上的攻防-677d9bb1d4b5" target="_blank">黑白棋筆記 - X位上的攻防</a></li>
+        <li><a href="http://blog.chinaunix.net/uid/20375883/sid/161508-abstract-1.html" target="_blank">散度理論講義-黃志華</a></li>
+        <li><a href="http://blog.chinaunix.net/uid/20375883/sid/136375-abstract-1.html" target="_blank">黑白棋佈局研究緒-黃志華</a></li>
+        <li><a href="https://www.ptt.cc/bbs/othello/index.html" target="_blank">Ptt othello板</a></li> 
+    </ul>
+</li>
+
+            <li>下棋網站：
+                <ul>
+                    <li><a href="https://www.playok.com/zh/reversi/" target="_blank">PlayOK在線黑白棋</a></li>
+                    <li><a href="https://www.othello.org/egev/" target="_blank">今日の詰めオセロ 上級編</a></li>
+                </ul>
+            </li>
+            <li>其他：
+                <ul>
+                    <li><a href="https://uenon1.com/archives/11101657.html" target="_blank">オセロ定石一覧(250種以上)</a></li>
+                    <li><a href="https://www.youtube.com/@user-qz5rd5fl3r/videos" target="_blank">黑白棋小教室</a></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</main>
+
+</body>
+</html>
