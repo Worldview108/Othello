@@ -311,46 +311,45 @@
         <ul class="strategies-list">
             <li><strong>開頭要吃少：</strong>很多新手會覺得吃越多越好，但其實不是吃太多會導致你的選擇變少，選擇太少就會容易下到差步，開頭吃少外也要注意不要被吃光了。</li>
             <li><strong>吃被包住的棋：</strong>吃被包住的棋比較不會增加對手的選擇，吃少和吃包住的棋目的都是減少對方的選擇，通常看起來比較被包住的一方、選擇比較多的一方都是優勢。比較詳細的可以參考 <a href="http://blog.chinaunix.net/uid/20375883/sid-161508-abstract-1.html" target="_blank">散度理論講義-黃志華</a></li>
-            <li><strong>避開危險的位子：</strong>新手盡量不要下C點和X點留到尾盤在下，在大多情況下X點會被；搶到角落，有些情況下C點會被搶到角落。</li>
+            <li><strong>避開危險的位子：</strong>新手盡量不要下C點和X點留到尾盤在下，在大多情況下X點會被搶到角落，有些情況下C點會被搶到角落。</li>
             <li><strong>角落很重要：</strong>角落很重要，佔到角落後可以盡量往外延伸，別人佔到角的話盡量不要讓他往外延伸。</li>
         </ul>
     </section>
 
-<div class="strategy-section" ><section id="letting-corner">
-    <h2>讓角</h2>
-    <p>讓角是黑白棋中很常見的策略,是一種透過誘惑、逼迫別人下角落來使自己取得其他優勢的策略。以下是一種常見的讓角情況:</p>
-    
-    <h3><strong>不平衡邊：</strong></h3>
-    <p>不平衡邊指對手在一個邊中沒有佔角連續佔了5個子無法佔到第6個子,形成一種不平衡的形狀,這時候就可以下不平衡那裡的X點,對手佔角後就可以插入他還沒下的那第6個子,之後就可以拿下邊和角。</p>
+    <section id="letting-corner">
+        <h2>讓角</h2>
+        <p>讓角是黑白棋中很常見的策略，是一種透過誘惑、逼迫別人下角落來使自己取得其他優勢的策略。以下是一種常見的讓角情況：</p>
+        
+        <h3><strong>不平衡邊：</strong></h3>
+        <p>不平衡邊指對手在一個邊中沒有佔角連續佔了5個子無法佔到第6個子,形成一種不平衡的形狀,這時候就可以下不平衡那裡的X點,對手佔角後就可以插入他還沒下的那第6個子,之後就可以拿下邊和角。</p>
 
-<div class="image-section">
-    <div class="image-slider">
-        <strong>成功案例</strong>
-        <div class="slider-container">
-            <div class="slider-content">
-                <img src="C:\Users\72868\Downloads\Othello\letting-corner\1\1\1-1-1.jpg" 
-                     id="corner-img-0"      
+        <div class="image-section">
+            <div class="image-slider">
+                <strong>成功案例</strong>
+                <div class="slider-container">
+                    <div class="slider-content">
+                        <img src="images/letting-corner/1/1/1-1-1.jpg" 
+                             id="corner-img-0"      
                      alt="成功案例"     
-                     aria-live="polite"
-                     loading="lazy">            
-                <div class="step-description">
-                    <p id="step-text-0">圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。</p>
+                             aria-live="polite"
+                                loading="lazy">            
+                        <div class="step-description">
+                            <p id="step-text-0">圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。</p>
                 </div>
             </div>
             <div class="slider-buttons">
                 <button onclick="prevImage(0)" id="prev-btn-0">上一步</button>
                 <button onclick="nextImage(0)" id="next-btn-0">下一步</button>
             </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<div class="image-section">
-    <div class="image-slider">
+        <div class="image-section">
+            <div class="image-slider">
         <strong>失敗案例1</strong>
         <div class="slider-container">
             <div class="slider-content">
-                <img src="C:\Users\72868\Downloads\Othello\letting-corner\1\2\1-2-1.jpg" 
+                <img src="images/letting-corner/1/2/1-2-1.jpg" 
                      id="corner-img-1" 
                      alt="失敗案例1">
                 <div class="step-description">
@@ -362,15 +361,15 @@
                 <button onclick="nextImage(1)" id="next-btn-1">下一步</button>
             </div>
         </div>
-    </div>
+    </div>  
 </div>
 
-<div class="image-section">
+<div class="image-section"> 
     <div class="image-slider">
         <strong>失敗案例2</strong>
         <div class="slider-container">
             <div class="slider-content">
-                    <img src="C:\Users\72868\Downloads\Othello\letting-corner\1\3\1-3-1.jpg" 
+                    <img src="images/letting-corner/1/3/1-3-1.jpg" 
                      id="corner-img-2" 
                      alt="失敗案例2">
                 <div class="step-description">
@@ -391,6 +390,76 @@
         <li>自己在對手佔角後無法插入角落旁邊的C點。</li>
     </ul>
     <p>以上棋型是簡單介紹讓角策略，下的步不一定是最佳步。</p>
+
+<div class="strategy-section">
+    <h3><strong>斯通納陷阱：</strong></h3>
+    <p>斯通納陷阱或稱四通陷阱(Stoner Trap)，是透過下X點來搶奪角的策略。用範例來詳細說明：</p>
+
+    <div class="image-section">
+        <div class="image-slider">
+            <strong>成功案例</strong>
+            <div class="slider-container">
+                <div class="slider-content">
+                    <img src="images/letting-corner/2/3/2-3-1.jpg" 
+                         id="corner-img-3" 
+                         alt="成功案例">
+                    <div class="step-description">
+                        <p id="step-text-3">圖1：黑子在右邊從C點延伸了4子，如果白子下G7的(右下X點)會佔領整條對角線且後續能下入H6，那就斯通納條件成立，這時斯通納條件成立了。</p>
+                    </div>
+                </div>
+                <div class="slider-buttons">
+                    <button onclick="prevImage(3)" id="prev-btn-3">上一步</button>
+                    <button onclick="nextImage(3)" id="next-btn-3">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <div class="image-slider">
+            <strong>失敗案例1</strong>
+            <div class="slider-container">
+                <div class="slider-content">
+                    <img src="images/letting-corner/2/2/2-2-1.jpg" 
+                         id="corner-img-4" 
+                         alt="失敗案例1">
+                    <div class="step-description">
+                        <p id="step-text-4">圖1：白子下H7并未佔領整條對角線，斯通納陷阱條件還未成立。</p>
+                    </div>
+                </div>
+                <div class="slider-buttons">
+                    <button onclick="prevImage(4)" id="prev-btn-4">上一步</button>
+                    <button onclick="nextImage(4)" id="next-btn-4">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <div class="image-slider">
+            <strong>失敗案例2</strong>
+            <div class="slider-container">
+                <div class="slider-content">
+                    <img src="images/letting-corner/2/1/2-1-1.jpg" 
+                         id="corner-img-5" 
+                         alt="失敗案例2">
+                    <div class="step-description">
+                        <p id="step-text-5">圖1：白子後續無法插入H6，斯通納陷阱條件還未成立。</p>
+                    </div>
+                </div>
+                <div class="slider-buttons">
+                    <button onclick="prevImage(5)" id="prev-btn-5">上一步</button>
+                    <button onclick="nextImage(5)" id="next-btn-5">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p>總結：斯通納陷阱失敗原因：</p>
+    <ul class="summary-list">
+        <li>沒有佔領整條對角線。</li>
+        <li>無法下入對方邊連續4子後的第5子，去威脅佔角。</li>
+    </ul>
 </div>
 
 <script>
@@ -465,6 +534,85 @@ const allSliders = [
             }
         ],
         currentIndex: 0
+    },
+    {
+        images: [
+            {
+                url: "images/letting-corner/2/3/2-3-1.jpg",
+                text: "圖1：黑子在右邊從C點延伸了4子，如果白子下G7的(右下X點)會佔領整條對角線且後續能下入H6，那就斯通納條件成立，這時斯通納條件成立了。"
+            },
+            {
+                url: "images/letting-corner/2/3/2-3-2.jpg",
+                text: "圖2：白子下G7，佔領整條對角線，使用斯通納陷阱。"
+            },
+            {
+                url: "images/letting-corner/2/3/2-3-3.jpg",
+                text: "圖3：黑子無法直接佔角，下C4搶奪對角線。"
+            },
+            {
+                url: "images/letting-corner/2/3/2-3-4.jpg",
+                text: "圖4：白子下H6威脅佔角。"
+            },
+            {
+                url: "images/letting-corner/2/3/2-3-5.jpg",
+                text: "圖5：黑子下H7阻止佔角的話，會翻到G7，反而讓白子可以拿到H1和H8二個角，所以只能下H8先佔角。"
+            },
+            {
+                url: "images/letting-corner/2/3/2-3-6.jpg",
+                text: "圖6：白子下H1，成功佔領了H1到H6。"
+            }
+        ],
+        currentIndex: 0
+    },
+    {
+        images: [
+            {
+                url: "images/letting-corner/2/2/2-2-1.jpg",
+                text: "圖1：白子下H7并未佔領整條對角線，斯通納陷阱條件還未成立。"
+            },
+            {
+                url: "images/letting-corner/2/2/2-2-2.jpg",
+                text: "圖2：白子下H7使用斯通納策略。"
+            },
+            {
+                url: "images/letting-corner/2/2/2-2-3.jpg",
+                text: "圖3：黑子可以直接下H8佔角，斯通納策略失敗。"
+            },
+            {
+                url: "images/letting-corner/2/2/2-2-4.jpg",
+                text: "圖4：白子下H6。"
+            },
+            {
+                url: "images/letting-corner/2/2/2-2-5.jpg",
+                text: "圖5：黑子下H7，鞏固了H2到H8。"
+            }
+        ],
+        currentIndex: 0
+    },
+    {
+        images: [
+            {
+                url: "images/letting-corner/2/1/2-1-1.jpg",
+                text: "圖1：白子後續無法插入H6，斯通納陷阱條件還未成立。"
+            },
+            {
+                url: "images/letting-corner/2/1/2-1-2.jpg",
+                text: "圖2：白子下H7使用斯通納策略。"
+            },
+            {
+                url: "images/letting-corner/2/1/2-1-3.jpg",
+                text: "圖3：黑子下B5搶奪對角線。"
+            },
+            {
+                url: "images/letting-corner/2/1/2-1-4.jpg",
+                text: "圖4：由於白子無法下入H6，所以斯通納策略失敗，下了B4。"
+            },
+            {
+                url: "images/letting-corner/2/1/2-1-5.jpg",
+                text: "圖5：黑子下H8佔角，白子白白讓了1個角。"
+            }
+        ],
+        currentIndex: 0
     }
 ];
 
@@ -530,10 +678,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+
+
         
         
 <section id="resources">
-<h2>其他黑白棋教學資訊</h2></section>
+<h2>其他黑白棋教學資訊</h2>
         <ul class="resources-list">
             <li>書籍：
                 <ul> <div class="dropdown">
