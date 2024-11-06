@@ -47,7 +47,6 @@
             border-radius: 5px;
         }
         main {
-            margin-top: 60px;
             margin: 60px auto 20px;
             padding: 20px;
             background-color: #fff;
@@ -179,6 +178,10 @@
             object-fit: contain;
             border-radius: 5px;
             margin-right: 20px;
+            transition: opacity 0.3s;
+        }
+        .image-slider img[loading] {
+            opacity: 0.5;
         }
         .slider-buttons {
             display: flex;
@@ -288,11 +291,11 @@
     <section id="knowledge">
         <h2>黑白棋基礎知識</h2>
         <div class="image-section">
-            <img src="images\basic\1.png" alt="黑白棋標準標記法 - 圖1">
+            <img src="images/basic/1.png" alt="黑白棋標準標記法 - 圖1">
             <p><strong>黑白棋的標準標記法</strong>，從左到右為「a」到「h」，從上到下為「1」到「8」。每一位置用小寫字母加數字表示，例如，‘a1’為左上角，‘h8’為右下角。</p>
         </div>
         <div class="image-section">
-            <img src="images\basic\2.png" alt="黑白棋特定標記 - 圖2">
+            <img src="images/basic/2.png" alt="黑白棋特定標記 - 圖2">
             <p><strong>特定位置標記法</strong>，其中 B 點為邊上的中間兩點，C 點為與角相鄰的兩點，A 點位於 B 點和 C 點之間，X 點為與角斜向相鄰的一點，為提醒其危險性。</p>
         </div>
 
@@ -387,7 +390,7 @@
     
         <p>總結：不平衡邊讓角失敗通常有以下原因：</p>
         <ul class="summary-list">
-            <li>讓對手在不翻到X點的情況下插入C點，把不平衡邊變成平衡邊。</li>
+            <li>讓對手在不翻到X點的情況下插��C點，把不平衡邊變成平衡邊。</li>
             <li>自己在對手佔角後無法插入角落旁邊的C點。</li>
         </ul>
         <p>以上棋型是簡單介紹讓角策略，下的步不一定是最佳步。</p>
@@ -464,7 +467,162 @@
     
     <script>
         const allSliders = [
-            // ... 您的 slider 配置保持不變 ...
+            // 讓角成功案例
+            {
+                images: [
+                    {
+                        url: "images/letting-corner/1/1/1-1-1.jpg",
+                        text: "圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。"
+                    },
+                    {
+                        url: "images/letting-corner/1/1/1-1-2.jpg",
+                        text: "圖2：這時可以下G2誘惑對方佔角。"
+                    },
+                    {
+                        url: "images/letting-corner/1/1/1-1-3.jpg",
+                        text: "圖3：黑子下H1佔角後，就可以趁機插入H2。"
+                    },
+                    {
+                        url: "images/letting-corner/1/1/1-1-4.jpg",
+                        text: "圖4：下H2後就可以拿下邊和角了。"
+                    }
+                ],
+                currentIndex: 0
+            },
+            // 讓角失敗案例1
+            {
+                images: [
+                    {
+                        url: "images/letting-corner/1/2/1-2-1.jpg",
+                        text: "圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。"
+                    },
+                    {
+                        url: "images/letting-corner/1/2/1-2-2.jpg",
+                        text: "圖2：這時候下G2的讓角會失敗，因為D2到G2都是白子，黑子下H2不會翻到G2導致被佔角。"
+                    },
+                    {
+                        url: "images/letting-corner/1/2/1-2-3.jpg",
+                        text: "圖3：下了H2後原本的不平衡變就成了平衡邊。"
+                    },
+                    {
+                        url: "images/letting-corner/1/2/1-2-4.jpg",
+                        text: "圖4：這時白子也無法阻止黑子佔角了，下了F8。"
+                    },
+                    {
+                        url: "images/letting-corner/1/2/1-2-5.jpg",
+                        text: "圖5：黑子佔角後，就穩固了H1到h7的邊，角也可以往上面的邊繼續發展"
+                    }
+                ],
+                currentIndex: 0
+            },
+            // 讓角失敗案例2
+            {
+                images: [
+                    {
+                        url: "images/letting-corner/1/3/1-3-1.jpg",
+                        text: "圖1：黑子在右邊上連續佔了5個子，形成不平衡邊。"
+                    },
+                    {
+                        url: "images/letting-corner/1/3/1-3-2.jpg",
+                        text: "圖2：但這時候下G2的讓角也會失敗。"
+                    },
+                    {
+                        url: "images/letting-corner/1/3/1-3-3.jpg",
+                        text: "圖3：因為C2到F2都是黑子，黑子下H1的話白子不能插入H2。"
+                    },
+                    {
+                        url: "images/letting-corner/1/3/1-3-4.jpg",
+                        text: "圖4：這時白子也無法阻止黑子了，下了D7。"
+                    },
+                    {
+                        url: "images/letting-corner/1/3/1-3-5.jpg",
+                        text: "圖5：黑子佔角後，就穩固了H1到h7的邊，角也可以往上面的邊繼續發展"
+                    }
+                ],
+                currentIndex: 0
+            },
+            // 斯通納陷阱成功案例
+            {
+                images: [
+                    {
+                        url: "images/letting-corner/2/3/2-3-1.jpg",
+                        text: "圖1：黑子在右邊從C點延伸了4子，如果白子下G7的(右下X點)會佔領整條對角線且後續能下入H6，那就斯通納條件成立，這時斯通納條件成立了。"
+                    },
+                    {
+                        url: "images/letting-corner/2/3/2-3-2.jpg",
+                        text: "圖2：白子下G7，佔領整條對角線，使用斯通納陷阱。"
+                    },
+                    {
+                        url: "images/letting-corner/2/3/2-3-3.jpg",
+                        text: "圖3：黑子無法直接佔角，下C4搶奪對角線。"
+                    },
+                    {
+                        url: "images/letting-corner/2/3/2-3-4.jpg",
+                        text: "圖4：白子下H6威脅佔角。"
+                    },
+                    {
+                        url: "images/letting-corner/2/3/2-3-5.jpg",
+                        text: "圖5：黑子下H7阻止佔角的話，會翻到G7，反而讓白子可以拿到H1和H8二個角，所以只能下H8先佔角。"
+                    },
+                    {
+                        url: "images/letting-corner/2/3/2-3-6.jpg",
+                        text: "圖6：白子下H1，成功佔領了H1到H6。"
+                    }
+                ],
+                currentIndex: 0
+            },
+            // 斯通納陷阱失敗案例1
+            {
+                images: [
+                    {
+                        url: "images/letting-corner/2/2/2-2-1.jpg",
+                        text: "圖1：白子下H7并未佔領整條對角線，斯通納陷阱條件還未成立。"
+                    },
+                    {
+                        url: "images/letting-corner/2/2/2-2-2.jpg",
+                        text: "圖2：白子下H7使用斯通納策略。"
+                    },
+                    {
+                        url: "images/letting-corner/2/2/2-2-3.jpg",
+                        text: "圖3：黑子可以直接下H8佔角，斯通納策略失敗。"
+                    },
+                    {
+                        url: "images/letting-corner/2/2/2-2-4.jpg",
+                        text: "圖4：白子下H6。"
+                    },
+                    {
+                        url: "images/letting-corner/2/2/2-2-5.jpg",
+                        text: "圖5：黑子下H7，鞏固了H2到H8。"
+                    }
+                ],
+                currentIndex: 0
+            },
+            // 斯通納陷阱失敗案例2
+            {
+                images: [
+                    {
+                        url: "images/letting-corner/2/1/2-1-1.jpg",
+                        text: "圖1：白子後續無法插入H6，斯通納陷阱條件還未成立。"
+                    },
+                    {
+                        url: "images/letting-corner/2/1/2-1-2.jpg",
+                        text: "圖2：白子下H7使用斯通納策略。"
+                    },
+                    {
+                        url: "images/letting-corner/2/1/2-1-3.jpg",
+                        text: "圖3：黑子下B5搶奪對角線。"
+                    },
+                    {
+                        url: "images/letting-corner/2/1/2-1-4.jpg",
+                        text: "圖4：由於白子無法下入H6，所以斯通納策略失敗，下了B4。"
+                    },
+                    {
+                        url: "images/letting-corner/2/1/2-1-5.jpg",
+                        text: "圖5：黑子下H8佔角，白子白白讓了1個角。"
+                    }
+                ],
+                currentIndex: 0
+            }
         ];
     
         function prevImage(sliderId) {
@@ -530,10 +688,10 @@
         });
     </script>
         
-<section id="resources">
-<h2>其他黑白棋教學資訊</h2>
+        <section id="resources">
+            <h2>其他黑白棋教學資訊</h2>
         <ul class="resources-list">
-            <li>書籍：
+            <li>書籍
                 <ul> <div class="dropdown">
                     <li><span>王偉-黑白新視角</span>
                     <div class="dropdown-content">
