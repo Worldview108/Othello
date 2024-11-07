@@ -266,6 +266,29 @@
                 padding: 10px 0;
             }
         }
+        .strategy-notes {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .note-primary {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .strategy-tips {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .strategy-tips li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -274,6 +297,7 @@
     <a href="#about" aria-current="page">關於黑白棋</a>
     <a href="#knowledge">黑白棋基礎知識</a>
     <a href="#letting-corner">讓角</a>
+    <a href="#improvement">變強的方法</a>
     <a href="#resources">其他黑白棋教學資訊</a>
 </nav>
 
@@ -324,7 +348,7 @@
         <p>讓角是黑白棋中很常見的策略，是一種透過誘惑、逼迫別人下角落來使自己取得其他優勢的策略。以下是一種常見的讓角情況：</p>
         
         <h3><strong>不平衡邊：</strong></h3>
-        <p>不平衡邊指對手在一個邊中沒有佔角連續佔了5個子無法佔到第6個子，形成一種不平衡的形狀，這時候就可以下不平衡那裡的X點，對手佔角後就可以插入他還沒下的那第6個子，之後就可以拿下邊和角。</p>
+        <p>不平衡邊指對手在一個邊中沒有佔角連續佔了5個子無法佔到第6個子，形成一種不平衡的形狀，這時候就可以下不平衡那裡的X點，對手佔角後就可以插入他還沒下的那第6個子，之後就可以拿下���和角。</p>
     
         <div class="image-section">
             <div class="image-slider">
@@ -390,7 +414,7 @@
     
         <p>總結：不平衡邊讓角失敗通常有以下原因：</p>
         <ul class="summary-list">
-            <li>讓對手在不翻到X點的情況下插入C點，把不平衡邊變成平衡邊。</li>
+            <li>讓對手在不翻到X點的情況插入C點，把不平衡邊變成平衡邊。</li>
             <li>自己在對手佔角後無法插入角落旁邊的C點。</li>
         </ul>
     
@@ -406,7 +430,7 @@
                              id="corner-img-3" 
                              alt="成功案例">
                         <div class="step-description">
-                            <p id="step-text-3">圖1：黑子在右邊從C點延伸了4子，如果白子下G7的(右下X點)會佔領整條對角線且後續能下入H6，那就斯通納條件成立，這時斯通納條件成立了。</p>
+                            <p id="step-text-3">圖1：黑子在右邊從C點延伸了4子，如果白子下G7的(右下X點)會佔領整���對角線且後續下入H6，那就斯通納條件成立，這時斯通納條件成立了。</p>
                         </div>
                     </div>
                     <div class="slider-buttons">
@@ -462,7 +486,35 @@
             <li>沒有佔領整條對角線。</li>
             <li>無法下入對方邊連續4子後的第5子，去威脅佔角。</li>
         </ul>
- <p>以上棋型是簡單介紹讓角策略，下的步不一定是最佳步。</p>
+        <div class="strategy-notes">
+            <p class="note-primary">以上棋型是簡單介紹讓角策略，下的步不一定是最佳步。</p>
+            
+            <ul class="strategy-tips">
+                <li>學會讓角策略後，不僅可以在條件符合時使用，也可以反過來阻止對手使用這個策略。</li>
+                <li>要做到這點，可以避免讓對手符合條件。</li>
+                <li>並非每次讓角都能帶來優勢。在使用讓角策略前，應該先評估是否真的能獲得更多優勢。</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="improvement">
+        <h2>變強的方法</h2>
+        <ul class="improvement-list">
+            <li>
+                <strong>多下棋和AI復盤</strong>
+                <p>要多下棋，下完棋可以用AI復盤，看哪步有更好的下法，嘗試去理解、記憶為什麼這步比較差或比較好，下次遇到相同的棋型就能做出更好的選擇。</p>
+            </li>
+            
+            <li>
+                <strong>黑白棋大戰</strong>
+                <p>現在大部份的棋手網棋都是使用黑白棋大戰這個軟體，7段(7D)以上的段位的人大概就有職業水平，各國的選手應該也是用這個軟體，所以打到比較高段位的話，有機會對弈到其他職業選手。</p>
+            </li>
+            
+            <li>
+                <strong>學習資源</strong>
+                <p>可以去讀、看一些別人寫得書籍、文章、影片。</p>
+            </li>
+        </ul>
     </section>
     
     <script>
@@ -550,7 +602,7 @@
                     },
                     {
                         url: "images/letting-corner/2/3/2-3-2.jpg",
-                        text: "圖2：白子下G7，佔領整條對角線，使用斯通納陷阱。"
+                        text: "圖2：白子下G7，佔領整條對角線，使用斯通納阱。"
                     },
                     {
                         url: "images/letting-corner/2/3/2-3-3.jpg",
@@ -690,52 +742,112 @@
         
         <section id="resources">
             <h2>其他黑白棋教學資訊</h2>
-        <ul class="resources-list">
-            <li>書籍
-                <ul> <div class="dropdown">
-                    <li><span>王偉-黑白新視角</span>
-                    <div class="dropdown-content">
-                        <a href="https://drive.google.com/file/d/1VrfNNnyn8cbXWjdysLPS6DDyZwZUa1Uv/view?usp=sharing" target="_blank">封面前言目錄</a>
-                        <a href="https://drive.google.com/file/d/19DkalQqU3Qow8SgUnO72tN12JT9ohxiI/view?usp=sharing" target="_blank">正文</a>
-                    </div>
-                </div>
-               
-                    <li><a href="https://drive.google.com/file/d/1hLEp70NXv9Bxtz6oxr-i_dFDo8samPTh/view?usp=sharing" target="_blank">Brian Rose-黑白棋指南</a></li>
-                </ul>
-            </li>
-           <li>文章：
-    <ul>  
-      <div class="dropdown">
-        <li>  
-            <span>黑白棋基礎教學</span>
-            <div class="dropdown-content">
-                <a href="https://www.ptt.cc/bbs/othello/M.1298698178.A.760.html" target="_blank">001</a>
-                <a href="https://www.ptt.cc/bbs/othello/M.1299304992.A.54A.html" target="_blank">002</a>
-                <a href="https://www.ptt.cc/bbs/othello/M.1300646760.A.440.html" target="_blank">003</a>
-            </div>
-        </li>
-        </div>
-        <li><a href="https://tetratioanime.medium.com/黑白棋筆記-x位上的攻防-677d9bb1d4b5" target="_blank">黑白棋筆記 - X位上的攻防</a></li>
-        <li><a href="http://blog.chinaunix.net/uid/20375883/sid/161508-abstract-1.html" target="_blank">散度理論講義-黃志華</a></li>
-        <li><a href="http://blog.chinaunix.net/uid/20375883/sid/136375-abstract-1.html" target="_blank">黑白棋佈局研究緒-黃志華</a></li>
-        <li><a href="https://www.ptt.cc/bbs/othello/index.html" target="_blank">Ptt othello板</a></li> 
-    </ul>
-</li>
+            <ul class="resources-list">
+                <li>書籍：
+                    <ul>
+                        <div class="dropdown">
+                            <li><span>王偉-黑白新視角</span>
+                                <div class="dropdown-content">
+                                    <a href="https://drive.google.com/file/d/1VrfNNnyn8cbXWjdysLPS6DDyZwZUa1Uv/view?usp=sharing" target="_blank">封面前言目錄</a>
+                                    <a href="https://drive.google.com/file/d/19DkalQqU3Qow8SgUnO72tN12JT9ohxiI/view?usp=sharing" target="_blank">正文</a>
+                                </div>
+                            </li>
+                        </div>
+                        <li><a href="https://drive.google.com/file/d/1hLEp70NXv9Bxtz6oxr-i_dFDo8samPTh/view?usp=sharing" target="_blank">Brian Rose-黑白棋指南</a></li>
+                    </ul>
+                </li>
+                <li>文章：
+                    <ul>
+                        <li>
+                            <div class="dropdown">
+                                <span>黑白棋基礎教學</span>
+                                <div class="dropdown-content">
+                                    <a href="https://www.ptt.cc/bbs/othello/M.1298698178.A.760.html" target="_blank">001</a>
+                                    <a href="https://www.ptt.cc/bbs/othello/M.1299304992.A.54A.html" target="_blank">002</a>
+                                    <a href="https://www.ptt.cc/bbs/othello/M.1300646760.A.440.html" target="_blank">003</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span>散度理論講義-黃志華</span>
+                                <div class="dropdown-content">
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3274497.html" target="_blank">1</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3277704.html" target="_blank">2</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3282260.html" target="_blank">3</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3286388.html" target="_blank">4</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3291581.html" target="_blank">5</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3292102.html" target="_blank">6</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3299085.html" target="_blank">8</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3301775.html" target="_blank">9</a>
+                                    <a href="http://m.blog.chinaunix.net/uid-20375883-id-3304650.html" target="_blank">10</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="https://tetratioanime.medium.com/黑白棋筆記-x位上的攻防-677d9bb1d4b5" target="_blank">黑白棋筆記 - X位上的攻防</a></li>
+                        <li><a href="https://www.ptt.cc/bbs/othello/index.html" target="_blank">Ptt othello板</a></li>
+                    </ul>
+                </li>
 
-            <li>下棋網站：
-                <ul>
-                    <li><a href="https://www.playok.com/zh/reversi/" target="_blank">PlayOK在線黑白棋</a></li>
-                    <li><a href="https://www.othello.org/egev/" target="_blank">今日の詰めオセロ 上級編</a></li>
-                </ul>
-            </li>
-            <li>其他：
-                <ul>
-                    <li><a href="https://uenon1.com/archives/11101657.html" target="_blank">オセロ定石一覧(250種以上)</a></li>
-                    <li><a href="https://www.youtube.com/@user-qz5rd5fl3r/videos" target="_blank">黑白棋小教室</a></li>
-                </ul>
-            </li>
-        </ul>
-    </section>
+                <li>下棋網站、軟體：
+                    <ul>
+                        <li>手機：
+                            <ul>
+                                <div class="dropdown">
+                                    <li><span>黑白棋大戰</span>
+                                        <div class="dropdown-content">
+                                            <a href="https://apps.apple.com/tw/app/othello-quest-online-othello/id859831183" target="_blank">蘋果版</a>
+                                            <a href="https://play.google.com/store/apps/details?id=fm.wars.reversi&hl=zh_TW" target="_blank">安卓版</a>
+                                        </div>
+                                    </li>
+                                </div>
+                                <li><a href="https://apps.apple.com/tw/app/othello-endingtraining/id1308323178" target="_blank">殘局解謎 $90 (蘋果)</a></li>
+                                <li><a href="https://apps.apple.com/tw/app/black-and-white-board-games/id1501315302" target="_blank">殘局解謎2 免費 (蘋果)</a></li>
+                            </ul>
+                        </li>
+                        <li>網站：
+                            <ul>
+                                <li><a href="https://www.playok.com/zh/reversi/" target="_blank">PlayOK在線黑白棋</a></li>
+                                <li><a href="https://www.othello.org/egev/" target="_blank">今日の詰めオセロ 上級編</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>AI復盤軟體：
+                    <ul>
+                        <li>手機：
+                            <ul>
+                                <div class="dropdown">
+                                    <li><span>SaioApp</span>
+                                        <div class="dropdown-content">
+                                            <a href="https://apps.apple.com/tw/app/saioapp/id1413881048?mt=8" target="_blank">蘋果版 $590</a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.RB.SaioApp" target="_blank">安卓版 $610</a>
+                                        </div>
+                                    </li>
+                                </div>
+                                <li><a href="https://apps.apple.com/tw/app/kifubox/id1434692901" target="_blank">KifuBox 免費 (蘋果)</a></li>
+                                <li><a href="https://apps.apple.com/tw/app/iedax/id1174720339" target="_blank">iEdax $90 (蘋果)</a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=com.droidSimax&hl=zh_TW&gl=US&pli=1" target="_blank">DroidShimax $80 (安卓)</a></li>
+                                <li><a href="https://play.google.com/store/apps/details?id=de.earthlingz.oerszebra&hl=zh_TW" target="_blank">Reversatile 免費 (安卓)</a></li>
+                            </ul>
+                        </li>
+                        <li>電腦：
+                            <ul>
+                                <li><a href="https://www.egaroucid.nyanyan.dev/en/" target="_blank">Egaroucid 免費</a></li>
+                                <li><a href="http://www.radagast.se/othello/download.html" target="_blank">Wzebra 免費</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>其他：
+                    <ul>
+                        <li><a href="https://uenon1.com/archives/11101657.html" target="_blank">オセロ定石一覧(250種以上)</a></li>
+                        <li><a href="https://www.youtube.com/@user-qz5rd5fl3r/videos" target="_blank">黑白棋教室</a></li>
+                        <li><a href="https://line.me/ti/g2/bn7jOjxrBL1dZEJZD1UmV2MjzhbmenUbf6azlA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">台灣黑白棋討論區LINE群</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 </main>
 
 </body>
